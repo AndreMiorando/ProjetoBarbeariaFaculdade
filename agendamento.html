@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cabecalho.css">
+    <link rel="stylesheet" href="assets/css/agendamento/agendamento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+    <title>Agendamento</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="cabecalho__link" href="servicos.html">
+            <img class="cabecalho__imagem-icone" src="assets/img/icone.jpg" alt="">
+        </a>
+        <img class="cabecalho__imagem" src="assets/img/logoinicial.jpg" alt="">
+    </header>
+    <section class="agendamento">
+        <h1 class="agendamento__titulo">Agende seu horário</h1>
+    </section>
+    <form class="formulario" onsubmit="return validarAgendamento()">
+        <label class="formulario__label" for="nomeCompleto">Nome completo:</label>
+        <input class="formulario__input" type="text" id="nomeCompleto" required>
+        <label class="formulario__label" for="telegone">Telefone:</label>
+        <input type="tel" id="telefone" class="formulario__input" required placeholder="(XX)XXXXX-XXXX">
+        <label class="formulario__label" for="email">Email:</label>
+        <input class="formulario__input" type="text" id="email" required placeholder="seuemail@dominio.com">
+        <label class="formulario__label" for="data">Data:</label>
+        <input class="formulario__input" type="text" id="data" required>
+        <label class="formulario__label" for="hora">Hora:</label>
+        <input class="formulario__input" type="text" id="hora" required>
+        <label class="formulario__label">Selecione o serviço desejado</label>
+        <div class="servico">
+            <input class="servico__input" type="radio" id="cabelo" name="servico" value="Cabelo">
+            <label class="servico__label" for="cabelo">Cabelo</label><br><br>
+            <input class="servico__input" type="radio" id="barba" name="servico" value="Barba">
+            <label class="servico__label" for="barba">Barba</label><br><br>
+            <input class="servico__input" type="radio" id="tintura" name="servico" value="Tintura">
+            <label class="servico__label" for="tintura">Tintura</label><br><br>
+            <input class="servico__input" type="radio" id="combo" name="servico" value="combo">
+            <label class="servico__label" for="combo">Cabelo + Barba</label>
+        </div>
+        <div class="botao">
+            <button class="botao__botao" type="submit">Agendar</button>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr('#data', {
+            enableTime: false,
+            dateFormat: 'd-m-Y',
+        });
+    
+        flatpickr('#hora', {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: 'H:i',
+        });
+
+        function validarAgendamento() {
+            var horaInput = document.getElementById('hora').value;
+            var hora = new Date('1970-01-01T' + horaInput + ':00');
+
+            var diaSemana = hora.getDay();
+
+            if (diaSemana >= 1 && diaSemana <= 5 && hora.getHours() >= 17 && hora.getHours() < 24) {
+                alert("Seu agendamento foi concluído com sucesso!");
+                return true;
+            } else if (diaSemana === 6 && hora.getHours() < 24) {
+                alert("Seu agendamento foi concluído com sucesso!");
+                return true;
+            } else {
+                alert("Os agendamentos só podem ser feitos entre 17:00 e 00:00 de segunda a sábado.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

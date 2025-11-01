@@ -1,0 +1,94 @@
+:root {
+    --cor-primaria: #FFD700;
+    --cor-secundaria: #d3d3d3;
+    --fonte-principal: "Encode Sans Expanded", sans-serif;
+}
+
+body {
+    font-family: var(--fonte-principal);
+}
+
+.agendamento {
+    display: flex;
+    justify-content: center;
+}
+
+.agendamento__titulo {
+    color: var(--cor-primaria);
+    margin-bottom: 3rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    margin-left: 10%;
+}
+
+.formulario__label {
+    color: #FFFAFA;
+    margin-bottom: 0.3rem;
+}
+
+.formulario__input {
+    background-color: #000000;
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 70%;
+}
+
+.servico {
+    margin-top: 0.7rem;
+    margin-bottom: 2rem;
+}
+
+.servico__label {
+    color: #FFFAFA;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.botao__botao {
+     background-color: var(--cor-primaria);
+     border: 2px solid var(--cor-primaria);
+     border-radius: 1.5rem;
+     color: #000000;
+     font-size: 2rem;
+     font-family: "Patua One", serif;
+     padding: 7px;
+     text-decoration: none;
+}
+
+
+.botao__botao:hover {
+    background-color: #FFFF00;
+}
+
+.botao__botao:active {
+    background-color: #FFFFE0;
+}
+
+@media screen and (max-width: 768px) {
+    .agendamento__titulo {
+        font-size: 1.5rem;
+    }
+
+    .formulario__label {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .agendamento__titulo {
+        font-size: 3rem;
+    }
+
+    .formulario__label {
+        font-size: 1.5rem;
+    }
+}

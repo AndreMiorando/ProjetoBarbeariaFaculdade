@@ -1,0 +1,112 @@
+:root {
+     --cor-primaria: #FFD700;
+     --fonte-principal: "Encode Sans Expanded", sans-serif;
+}
+
+body {
+     font-family: var(--fonte-principal);
+}
+
+.servico {
+     align-items: center;
+     display: flex;
+     justify-content: center;
+}
+
+.servico__texto {
+     color: var(--cor-primaria);
+     margin-bottom: 3rem;
+}
+
+.produto {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-gap: 1,25rem;
+     margin-bottom: 3rem;
+     padding-bottom: 2rem;
+}
+
+.produtos__lista {
+     margin: 1%;
+     text-align: center;
+     
+}
+
+ .produtos__item, .produtos__preco {
+     color: #FFFAFA;
+}
+
+.produtos__item {
+     font-size: 1.6rem;
+     font-weight: 400;
+     margin-bottom: 0.3rem;
+}
+
+.produtos__preco {
+     font-size: 1.2rem;
+     font-weight: 100;
+}
+
+.produtos__item:hover {
+     font-size: 1.3rem;
+     color: var(--cor-primaria);
+}
+
+.agendamento {
+     align-items: center;
+     display: flex;
+     justify-content: center;
+     margin-bottom: 2rem;
+}
+
+.agendamento__link {
+     background-color: var(--cor-primaria);
+     border: 2px solid var(--cor-primaria);
+     border-radius: 1.5rem;
+     color: #000000;
+     font-size: 2rem;
+     font-family: "Patua One", serif;
+     padding: 7px;
+     text-decoration: none;
+}
+
+.agendamento__link:hover {
+     background-color: #FFFF00;
+}
+
+.agendamento__link:active {
+     background-color: #FFFFE0;
+}
+
+/* Responsividade para celulares e tablets */
+@media screen and (max-width: 768px) {
+     .servico__texto {
+          font-size: 1.5rem;
+     }
+
+     .produtos__imagem {
+          height: auto;
+          width: 95%;
+      }
+ }
+ 
+ /* Responsividade para telas maiories */
+ 
+@media screen and (min-width: 769px) {
+     .servico__texto {
+          font-size: 3rem;
+     }
+
+     .produto {
+          display: flex;
+          justify-content: space-around;
+     }
+
+     .produtos__imagem {
+          width: 100%;
+     }
+
+     .agendamento__link {
+          font-size: 3rem;
+     }
+ }

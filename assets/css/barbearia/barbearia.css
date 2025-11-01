@@ -1,0 +1,162 @@
+:root {
+    --cor-primaria: #FFD700;
+    --fonte-principal: "Encode Sans Expanded", sans-serif;
+}
+
+body {
+    font-family: var(--fonte-principal);
+}
+
+.imagens {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.sobre {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sobre__titulo {
+    color: var(--cor-primaria);
+    margin-bottom: 2rem;
+}
+
+.sobre__descricao {
+    color: #FFFAFA;
+}
+
+.localizacao {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.localizacao__titulo {
+    color: var(--cor-primaria);
+    margin-bottom: 2rem;
+}
+
+.localizacao__mapa {
+    margin-bottom: 2rem;
+}
+
+.contato {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contato__titulo {
+    color: var(--cor-primaria);
+}
+
+.horario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    text-align: center;
+}
+
+.horario__titulo {
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.horario__lista {
+    color: #FFFAFA;
+    list-style-type: none;
+}
+
+
+.instagram {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.instagram__imagem {
+    width: 5%;
+}
+
+.instagram__descricao {
+    text-decoration: none;
+}
+
+.instagram__descricao:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .imagens__corte {
+        padding: 1rem;
+        width: 40%;
+    }
+
+    .sobre__titulo {
+        font-size: 1.5rem;
+    }
+
+    .sobre__descricao {
+        font-size: 0.75rem;
+    }
+
+    .localizacao__titulo {
+        font-size: 1.2rem;
+    }
+
+    .localizacao__mapa {
+        height: auto;
+        margin-bottom: 3rem;
+        width: 80%;
+    }
+
+    .horario__titulo {
+        font-size: 1.1rem;
+    }
+
+   .contato__titulo {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+   }
+}
+
+@media screen and (min-width: 769px) {
+    .imagens__corte {
+        width: 45%;
+    }
+
+    .sobre__titulo {
+        font-size: 3rem;
+    }
+
+    .sobre__descricao {
+        font-size: 1.5rem;
+    }
+
+    .localizacao__titulo {
+        font-size: 2.5rem;
+    }
+
+    .localizacao__mapa {
+        width: 90%;
+    }
+
+    .horario__titulo {
+        font-size: 2.2rem;
+    }
+
+    .contato__titulo {
+        font-size: 2rem;
+    }
+} 
